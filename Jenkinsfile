@@ -1,7 +1,6 @@
 pipeline {
-	JENKINS_API_TOKEN = credentials('clouduser')
     agent any
-    tools {
+	tools {
         jdk 'jdk17'
         nodejs 'node16'
     }
@@ -13,7 +12,7 @@ pipeline {
         DOCKER_PASS = 'dockerhub'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-	JENKINS_API_TOKEN = credentials("JENKINS_API_TOKEN")
+	JENKINS_API_TOKEN = credentials("clouduser")
     }
     stages {
         stage('clean workspace') {
