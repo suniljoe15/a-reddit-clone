@@ -1,4 +1,5 @@
 pipeline {
+	JENKINS_API_TOKEN = credentials('clouduser')
     agent any
     tools {
         jdk 'jdk17'
